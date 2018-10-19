@@ -1,0 +1,15 @@
+
+body {
+  background:
+    linear-gradient(90deg, #192a56 15px, transparent 1%) center,
+    linear-gradient(#192a56 15px, transparent 1%) center,
+    #5f9aec;
+  background-size: 16px 16px;
+}
+
+.main-container {
+  color: #5f9aec;
+  display: flex;
+  width 100%;
+  justify-content: center;
+}
