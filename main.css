@@ -1,15 +1,35 @@
 
 body {
+  /*
   background:
     linear-gradient(90deg, #192a56 15px, transparent 1%) center,
     linear-gradient(#192a56 15px, transparent 1%) center,
     #5f9aec;
   background-size: 16px 16px;
+  */
+  margin: 0;
+  background-image: url(BLACK_IX_desktop-2.jpg);
+  background-size: cover;
+  background-position: 50% 50vh;
+  background-repeat: no-repeat;
+  background-color: black;
 }
 
 .main-container {
-  color: #5f9aec;
   display: flex;
-  width 100%;
+  width: 100vw;
+  height: 100vh;
   justify-content: center;
+  align-items: flex-start;
+}
+
+.main-text-box {
+  color: white;
+  font-family: 'Crimson Text';
+  font-size: 30px;
+  margin-top: 20vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
