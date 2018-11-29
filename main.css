@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
 
 body {
   /*
@@ -8,22 +9,38 @@ body {
   background-size: 16px 16px;
   */
   margin: 0;
-  background-image: url(BLACK_IX_desktop-2.jpg);
-  background-size: cover;
-  background-position: 50% 50vh;
-  background-repeat: no-repeat;
-  background-color: black;
+}
+.background {
+  width: 100vw;
+  height: 100vh;
+  background:#000 url(star-wars-stars.png) repeat top center;
+  background-position: 50% 50%;
+  position: fixed;
+  overflow: hidden;
+  z-index:-1;
+  animation: pan 6s ease 21s;
+  display: flex;
+  align-items: center;
+  animation-fill-mode: forwards;
+}
+
+.earth {
+  margin-top: 240vh;
+  margin-left: 20vw;
+  width: 400px;
+  height: 400px;
+  animation: rise 6s ease 21s;
+  animation-fill-mode: forwards;
 }
 
 .main-container {
-  display: flex;
   width: 100vw;
   height: 100vh;
-  justify-content: center;
-  align-items: flex-start;
+  overflow: hidden;
 }
 
 .main-text-box {
+  /*
   color: white;
   font-family: 'Crimson Text';
   font-size: 30px;
@@ -32,4 +49,72 @@ body {
   flex-flow: column;
   justify-content: flex-start;
   align-items: flex-start;
+  */
+}
+
+.star-wars {
+  /* Flexbox to center the entire element on the screen */
+  display: flex;
+  justify-content: center;
+  /* This is a magic number based on the context in which this snippet is used and effects the perspective */
+  height: 1000px;
+  /* This sets allows us to transform the text on a 3D plane, and is somewhat a magic number */
+  perspective: 350px;
+  /* The rest is totally up to personal styling preferences */
+  color: #feda4a;
+  color: #ff6;
+  text-shadow: 0 0 2px #ff6;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  margin-top: 100vh;
+  transform-origin: 50% 100%;
+  animation: crawl 20s linear 1s;  
+}
+
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
+}
+
+@keyframes crawl {
+  0% {
+    margin-top: 100vh;
+    transform: rotateX(20deg)  translateZ(0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% { 
+    margin-top: -500vh;
+    transform: rotateX(25deg) translateZ(0);  
+    opacity: 0;
+  }
+}
+
+@keyframes pan {
+  0% {
+    background-position: 50% 50%;
+  }
+
+  100% {
+    background-position: 50% -120vh;
+  }
+}
+
+@keyframes rise {
+  0% {
+    margin-top: 240vh;
+  }
+
+  100% {
+    margin-top: 0;
+  }
 }
