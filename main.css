@@ -76,12 +76,49 @@ body {
   position: relative;
   margin-top: 100vh;
   transform-origin: 50% 100%;
-  animation: crawl 20s linear 1s;  
+  animation: crawl 20s linear 1s;
 }
 
 .crawl > .title {
   font-size: 90%;
   text-align: center;
+}
+
+.link-container {
+ 
+}
+
+.link {
+  color: #ff6;
+  text-shadow: 0 0 2px #ff6;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 150%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  opacity: 0;
+  transform: perspective(800px) translateZ(-1000px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+a {
+  text-decoration: none;
+}
+
+.link-1 {
+  animation: jump-in 3s cubic-bezier(0.015, 1.225, 0.030, 0.950) 28s; 
+  animation-fill-mode: forwards;
+}
+
+.link-2 {
+  animation: jump-in 3s cubic-bezier(0.015, 1.225, 0.030, 0.950) 29s; 
+  animation-fill-mode: forwards;
+}
+
+.link-3 {
+  animation: jump-in 3s cubic-bezier(0.015, 1.225, 0.030, 0.950) 28.6s; 
+  animation-fill-mode: forwards;
 }
 
 @keyframes crawl {
@@ -116,5 +153,29 @@ body {
 
   100% {
     margin-top: 0;
+  }
+}
+
+@keyframes jump-in {
+  0% {
+    opacity: 1;
+  }
+
+  98% {
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(800px) translateZ(0);
+  }
+}
+
+@media(max-width: 425px) {
+  .star-wars {
+    font-size: 300%;
+  }
+  
+  .earth {
+    margin-left: 0;
   }
 }
